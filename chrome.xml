@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Chrome Suite">
+    <test name="Chrome Tests">
+        <parameter name="browser" value="chrome"/>
+
+        <classes>
+            <class name="skyrexio.tests.LoginTest"/>
+        </classes>
+    </test>
+</suite>

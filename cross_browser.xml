@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SkyrexioCrossBrowserSuite" parallel="tests" thread-count="2">
+
+    <test name="Chrome tests">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="skyrexio.tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Safari tests">
+        <parameter name="browser" value="safari"/>
+        <classes>
+            <class name="skyrexio.tests.LoginTest"/>
+        </classes>
+    </test>
+
+</suite>
