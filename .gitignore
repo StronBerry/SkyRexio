@@ -3,3 +3,5 @@ target/
 build/
 *.iml
 *.txt
+local.properties
+src/test/resources/local.properties
