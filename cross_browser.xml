@@ -6,14 +6,16 @@
     <test name="Chrome tests">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="skyrexio.tests.LoginTest"/>
+            <class name="skyrexio.tests.LoginPositiveTest"/>
+            <class name="skyrexio.tests.LoginNegativeTest"/>
         </classes>
     </test>
 
     <test name="Safari tests">
         <parameter name="browser" value="safari"/>
         <classes>
-            <class name="skyrexio.tests.LoginTest"/>
+            <class name="skyrexio.tests.LoginPositiveTest"/>
+            <class name="skyrexio.tests.LoginNegativeTest"/>
         </classes>
     </test>
 

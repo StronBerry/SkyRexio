@@ -5,7 +5,8 @@
         <parameter name="browser" value="chrome"/>
 
         <classes>
-            <class name="skyrexio.tests.LoginTest"/>
+            <class name="skyrexio.tests.LoginPositiveTest"/>
+            <class name="skyrexio.tests.LoginNegativeTest"/>
         </classes>
     </test>
 </suite>

@@ -16,7 +16,7 @@ import user.UserFactory;
 @Epic("Skyrexio")
 @Feature("Авторизация")
 @Owner("StronBerry")
-public class LoginTest extends BaseTest {
+public class LoginPositiveTest extends BaseTest {
 
     @Test(description = "Успешная авторизация с переходом на главную страницу")
     @Story("Пользователь входит в приложение с валидными учетными данными")

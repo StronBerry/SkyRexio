@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.PropertyReader;
@@ -35,6 +36,10 @@ public abstract class BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+    protected WebElement waitUntilPresent(By locator) {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
     @Step("Дождаться кликабельности элемента: {locator}")
     protected WebElement waitUntilClickable(By locator) {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
@@ -53,6 +58,11 @@ public abstract class BasePage {
     @Step("Кликнуть по элементу: {locator}")
     protected void click(By locator) {
         waitUntilClickable(locator).click();
+    }
+
+    @Step("Навести курсор на элемент: {locator}")
+    protected void hover(By locator) {
+        new Actions(driver).moveToElement(waitUntilVisible(locator)).perform();
     }
 
     @Step("Ввести значение в элемент: {locator}")
@@ -74,5 +84,10 @@ public abstract class BasePage {
         } catch (NoSuchElementException exception) {
             return false;
         }
+    }
+
+    @Step("Проверить, что элемент неактивен: {locator}")
+    protected boolean isDisabled(By locator) {
+        return !waitUntilVisible(locator).isEnabled();
     }
 }
